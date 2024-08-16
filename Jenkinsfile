@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/my-html-app.git'
+                git 'https://github.com/deepakmizzle/html-app.git'
             }
         }
         stage('Test') {
@@ -20,12 +20,12 @@ pipeline {
                     // SSH into your web server and deploy the HTML file
                     sshagent(['your-ssh-credentials-id']) {
                         sh '''
-                        ssh -o StrictHostKeyChecking=no user@your-server-ip << EOF
+                        ssh -o StrictHostKeyChecking=no ubuntu@13.235.90.126 << EOF
                         mkdir -p /var/www/html/
                         rm -rf /var/www/html/*
                         exit
                         EOF
-                        scp -o StrictHostKeyChecking=no index.html user@your-server-ip:/var/www/html/
+                        scp -o StrictHostKeyChecking=no index.html ubuntu@13.235.90.126:/var/www/html/
                         '''
                     }
                 }
