@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // SSH into your web server and deploy the HTML file
-                    sshagent(['your-ssh-credentials-id']) {
+                    sshagent(['deepakmizzle1234']) {
                         sh '''
                         ssh -o StrictHostKeyChecking=no ubuntu@13.235.90.126 << EOF
                         mkdir -p /var/www/html/
